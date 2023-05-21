@@ -1,0 +1,123 @@
+.employee-schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.main {
+    text-align: center;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.employee-schedule-table th,
+.employee-schedule-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.employee-schedule-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.employee-schedule-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.employee-schedule-table tbody tr:hover {
+    background-color: #ebebeb;
+    cursor: pointer;
+}
+
+.time-bar {
+    position: relative;
+    height: 20px;
+    overflow: hidden;
+}
+
+.time-bar.plan::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    z-index: 1;
+}
+
+.time-bar.weekend::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #48bd20;
+    z-index: 1;
+}
+
+.time-bar.actual::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+            45deg,
+            #e0e0e0,
+            #e0e0e0 5px,
+            transparent 5px,
+            transparent 10px
+    );
+    z-index: 1;
+}
+
+.time-bar.absenteeism::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+            45deg,
+            #f27b7b,
+            #f27b7b 5px,
+            transparent 5px,
+            transparent 10px
+    );
+    z-index: 1;
+}
+
+.time-bar span {
+    position: relative;
+    z-index: 2;
+}
+
+.selected-shift {
+    background-color: #c6dbf2 !important;
+}
+
+.selected-shift-details {
+    margin-top: 20px;
+}
+
+.selected-shift-details h2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.selected-shift-details p {
+    margin-top: 8px;
+}
+
+.same-date-shift {
+    border-top: none !important;
+}
